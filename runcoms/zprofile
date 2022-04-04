@@ -31,9 +31,9 @@ fi
 # Language
 #
 
-if [[ -z "$LANG" ]]; then
-  export LANG='en_GB.UTF-8'
-fi
+#if [[ -z "$LANG" ]]; then
+export LANG='en_GB.UTF-8'
+#fi
 
 #
 # Paths
@@ -49,9 +49,9 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{bin,sbin}
   $path
 )
+
 
 #
 # Less
