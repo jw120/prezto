@@ -43,6 +43,16 @@ alias ytp='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(up
 alias byt='~/Projects/byt/.venv/bin/python byt.py'
 alias bytp='~/Projects/byt/.venv/bin/python byt.py --proxy socks5://127.0.0.1:1081'
 
+# Run emacs in background
+# alias em='emacs &>!/tmp/.emacs_output &'
+function em() {
+   emacs "$@" &>!/tmp/.emacs_output &
+}
+
+# Run batch youtube-dl
+alias byt='~/Projects/byt/.venv/bin/python ~/Projects/byt/byt.py'
+
+
 ## Borrowed from ohmyzsh (takedir)
 function take() {
   mkdir -p $@ && cd ${@:$#}
