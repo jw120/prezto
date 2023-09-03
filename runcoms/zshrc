@@ -36,12 +36,14 @@ alias gcmsg='git commit -m'
 # Disable standard rm defaulting to -i
 alias rm='nocorrect rm'
 
-# Short formst for yt-dlp
+# Short formst for yt-dlp (-p forms use a proxy)
 alias yt-dlpp='yt-dlp --proxy socks5://127.0.0.1:1081'
 alias  yt='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo[filesize<150M]+bestaudio/best"'
 alias ytp='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo[filesize<150M]+bestaudio/best" --proxy socks5://127.0.0.1:1081'
 alias byt='~/Projects/byt/.venv/bin/python byt.py'
 alias bytp='~/Projects/byt/.venv/bin/python byt.py --proxy socks5://127.0.0.1:1081'
+# Download best version (don't use archive as use-case is probably a redownload)
+alias  ytb='yt-dlp -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo+bestaudio/best"'
 
 # Run emacs in background
 # alias em='emacs &>!/tmp/.emacs_output &'
