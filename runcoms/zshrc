@@ -36,14 +36,22 @@ alias gcmsg='git commit -m'
 # Disable standard rm defaulting to -i
 alias rm='nocorrect rm'
 
-# Short formst for yt-dlp (-p forms use a proxy)
+# Short formst for yt-dlp (-p forms use a proxy, -g forms use geph proxy)
+# Raw yt-dlp
 alias yt-dlpp='yt-dlp --proxy socks5://127.0.0.1:1081'
+alias yt-dlpg='yt-dlp --proxy socks5://127.0.0.1:9909'
+# Normal usage from youtube
 alias  yt='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo[filesize<150M]+bestaudio/best"'
 alias ytp='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo[filesize<150M]+bestaudio/best" --proxy socks5://127.0.0.1:1081'
+alias ytg='yt-dlp --download-archive ~/Scratch/Youtube/download-archive -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo[filesize<150M]+bestaudio/best" --proxy socks5://127.0.0.1:9909'
+# Batch youtube download
 alias byt='~/Projects/byt/.venv/bin/python byt.py'
-alias bytp='~/Projects/byt/.venv/bin/python byt.py --proxy socks5://127.0.0.1:1081'
+alias bytp='~/Projects/byt/.venv/bin/python ~/Projects/byt/byt.py --proxy socks5://127.0.0.1:1081'
+alias bytg='~/Projects/byt/.venv/bin/python ~/Projects/byt/byt.py --proxy socks5://127.0.0.1:9909'
 # Download best version (don't use archive as use-case is probably a redownload)
 alias  ytb='yt-dlp -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo+bestaudio/best"'
+alias  ytbp='yt-dlp -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo+bestaudio/best" --proxy socks5://127.0.0.1:1081'
+alias  ytbg='yt-dlp -o "%(uploader)s-%(upload_date)s-%(title)s.mp4" -f "bestvideo+bestaudio/best" --proxy socks5://127.0.0.1:9909'
 
 # Run emacs in background
 # alias em='emacs &>!/tmp/.emacs_output &'
