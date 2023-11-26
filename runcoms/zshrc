@@ -73,23 +73,34 @@ function zsh_stats() {
     | grep -v "./" | sort -nr | head -n 20 | column -c3 -s " " -t | nl
 }
 
-## Support pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+### Support pyenv
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+# 2023-11-23 Focus programming support on:
+# * rye for python
+# * devbox for everything else
+# * direnv to set them up
+
+## Support rye
+source "$HOME/.rye/env"
+
+## Support direnv
+eval "$(direnv hook zsh)"
+
 
 
 ## For use with AZ machine
-
-function deproxy {
-  unset http_proxy
-  unset https_proxy
-  unset HTTPS_PROXY
-  update_prompt_for_proxy
-}
-function reproxy {
-  export http_proxy=10.116.6.100:10263
-  export https_proxy=10.116.6.100:10263
-  export HTTPS_PROXY=10.116.6.100:10263
-  update_prompt_for_proxy
-}
+# function deproxy {
+#   unset http_proxy
+#   unset https_proxy
+#   unset HTTPS_PROXY
+#   update_prompt_for_proxy
+# }
+# function reproxy {
+#   export http_proxy=10.116.6.100:10263
+#   export https_proxy=10.116.6.100:10263
+#   export HTTPS_PROXY=10.116.6.100:10263
+#   update_prompt_for_proxy
+# }

@@ -10,14 +10,20 @@ if [[ ("$SHLVL" -eq 1 && ! -o LOGIN) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; the
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# path=(
+#   $HOME/.local/bin
+#   $HOME/.cabal/bin
+#   $HOME/.ghcup/bin
+#   /usr/local/{bin,sbin}
+#   $path
+#   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# )
+
 path=(
   $HOME/.local/bin
-  $HOME/.cabal/bin
-  $HOME/.ghcup/bin
   /usr/local/{bin,sbin}
   $path
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 )
 
-# Rustup configuation
-. "$HOME/.cargo/env"
+### Rustup configuation
+##. "$HOME/.cargo/env"
