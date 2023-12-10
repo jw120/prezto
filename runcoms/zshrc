@@ -36,6 +36,9 @@ alias gcmsg='git commit -m'
 # Disable standard rm defaulting to -i
 alias rm='nocorrect rm'
 
+# VS Code
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
 # Short formst for yt-dlp (-p forms use a proxy, -g forms use geph proxy)
 # Raw yt-dlp
 alias yt-dlpp='yt-dlp --proxy socks5://127.0.0.1:1081'
