@@ -22,6 +22,7 @@ fi
 path=(
   $HOME/.local/bin
   /usr/local/{bin,sbin}
+  /Library/TeX/texbin
   $path
 )
 
